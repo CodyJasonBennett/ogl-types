@@ -1,0 +1,10 @@
+{
+  "name": "ogl-types",
+  "version": "0.0.93",
+  "description": "TypeScript definitions for ogl",
+  "author": "Cody Bennett (https://github.com/CodyJasonBennett)",
+  "homepage": "https://github.com/CodyJasonBennett/ogl-types",
+  "repository": "https://github.com/CodyJasonBennett/ogl-types",
+  "license": "Unlicense",
+  "types": "index.d.ts"
+}
