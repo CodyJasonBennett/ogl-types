@@ -1472,4 +1472,40 @@ export class Triangle extends Geometry {
   constructor(gl: OGLRenderingContext, options?: Partial<TriangleOptions>)
 }
 
+export interface AxesHelperOptions extends Omit<MeshOptions, 'mode'> {
+  size: number
+  symmetric: boolean
+  xColor: Color
+  yColor: Color
+  zColor: Color
+}
+export class AxesHelper extends Mesh {
+  constructor(gl: OGLRenderingContext, options?: AxesHelperOptions)
+}
+
+export interface FaceNormalsHelperOptions extends Omit<MeshOptions, 'mode'> {
+  size: number
+  color: Color
+}
+export class FaceNormalsHelper extends Mesh {
+  constructor(object: Mesh, options?: FaceNormalsHelperOptions)
+}
+
+export interface GridHelperOptions extends Omit<MeshOptions, 'mode'> {
+  size: number
+  divisions: number
+  color: Color
+}
+export class GridHelper extends Mesh {
+  constructor(gl: OGLRenderingContext, options?: GridHelperOptions)
+}
+
+export interface VertexNormalsHelperOptions extends Omit<MeshOptions, 'mode'> {
+  size: number
+  color: Color
+}
+export class VertexNormalsHelper extends Mesh {
+  constructor(object: Mesh, options?: VertexNormalsHelperOptions)
+}
+
 export as namespace OGL
