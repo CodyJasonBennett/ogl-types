@@ -1515,4 +1515,49 @@ export class WireMesh extends Mesh {
   constructor(gl: OGLRenderingContext, options?: WireMeshOptions)
 }
 
+export type PathTiltFunction = (angle: number, t: number, path: Path) => number
+
+export interface PathFrenetFrames {
+  tangents: Vec3[]
+  normals: Vec3[]
+  binormals: Vec3[]
+}
+
+export class Path {
+  /**
+   * Tilt function receive an angle, relative path length offset in range [0..1] and path object instance. Should return new tilt angle
+   */
+  tiltFunction?: PathTiltFunction
+
+  // private methods
+  addSegment(segment: any): this
+  getSegments(): any[]
+
+  moveTo(p: Vec3, tilt?: number): void
+  bezierCurveTo(cp1: Vec3, cp2: Vec3, p: Vec3, tilt?: number): this
+  quadraticCurveTo(cp: Vec3, p: Vec3, tilt?: number): this
+  lineTo(p: Vec3, tilt?: number): this
+  updateLength(): void
+  getLength(): number
+  /**
+   * Finding a path segment at a given absolute length distance
+   */
+  findSegmentIndexAtLength(len: number): [segmentIndex: number, relativeSegmentDistance: number]
+  getPointAtLength(len: number, out?: Vec3): Vec3
+  getPointAt(t: number, out?: Vec3): Vec3
+  getTangentAtLength(len: number, out?: Vec3): number
+  getTangentAt(t: number, out?: Vec3): number
+  getTiltAtLength(len: number): number
+  getTiltAt(t: number): number
+  /**
+   * Get sequence of points using `getPointAt(t)`
+   */
+  getPoints(divisions: number): Vec3[]
+  /**
+   * Generates the Frenet Frames.
+   * See http://www.cs.indiana.edu/pub/techreports/TR425.pdf
+   */
+  computeFrenetFrames(divisions?: number, closed?: boolean): PathFrenetFrames
+}
+
 export as namespace OGL
