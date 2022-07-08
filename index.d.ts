@@ -1508,4 +1508,11 @@ export class VertexNormalsHelper extends Mesh {
   constructor(object: Mesh, options?: VertexNormalsHelperOptions)
 }
 
+export interface WireMeshOptions extends Omit<MeshOptions, 'mode' | 'program'> {
+  wireColor: Color
+}
+export class WireMesh extends Mesh {
+  constructor(gl: OGLRenderingContext, options?: WireMeshOptions)
+}
+
 export as namespace OGL
