@@ -1060,7 +1060,9 @@ export class KTXTexture extends Texture {
   parseBuffer(buffer: ArrayBuffer): void
 }
 
-export function NormalProgram(gl: OGLRenderingContext): Program
+export class NormalProgram extends Program {
+  constructor(gl: OGLRenderingContext)
+}
 
 export type OrbitOptions = {
   element: HTMLElement
