@@ -1562,4 +1562,17 @@ export class Path {
   computeFrenetFrames(divisions?: number, closed?: boolean): PathFrenetFrames
 }
 
+export class InstancedMesh extends Mesh {
+  readonly isInstancedMesh: true
+  frustumCulled: boolean
+
+  totalInstanceCount?: number
+  instanceTransforms?: Transform[]
+  frustumCullFunction?: ({ camera: Camera }) => void
+  instanceRenderList?: Transform[]
+
+  addFrustumCull(): void
+  removeFrustumCull(): void
+}
+
 export as namespace OGL
