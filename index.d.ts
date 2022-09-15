@@ -37,7 +37,7 @@ export class Camera extends Transform {
   project(v: Vec3): this
   unproject(v: Vec3): this
   updateFrustum(): void
-  frustumIntersectsMesh(node: Mesh): boolean
+  frustumIntersectsMesh(node: Mesh, worldMatrix?: Mat4): boolean
   frustumIntersectsSphere(center: Vec3, radius: number): boolean
 }
 
