@@ -1,6 +1,6 @@
 {
   "name": "ogl-types",
-  "version": "0.0.100",
+  "version": "0.0.101",
   "description": "TypeScript definitions for ogl",
   "author": "Cody Bennett (https://github.com/CodyJasonBennett)",
   "homepage": "https://github.com/CodyJasonBennett/ogl-types",
