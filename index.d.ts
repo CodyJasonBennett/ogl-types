@@ -677,8 +677,8 @@ export class Vec2 extends Array<number> {
   copy(v: Vec2): this
   add(va: Vec2, vb: Vec2): this
   sub(va: Vec2, vb: Vec2): this
-  multiply(v: Vec2): this
-  divide(v: Vec2): this
+  multiply(v: Vec2 | number): this
+  divide(v: Vec2 | number): this
   inverse(v?: Vec2): this
   len(): number
   distance(v: Vec2): number
@@ -711,8 +711,8 @@ export class Vec3 extends Array<number> {
   copy(v: Vec3): this
   add(va: Vec3, vb?: Vec3): this
   sub(va: Vec3, vb?: Vec3): this
-  multiply(v: Vec3): this
-  divide(v: Vec3): this
+  multiply(v: Vec3 | number): this
+  divide(v: Vec3 | number): this
   inverse(v?: Vec3): this
   len(): number
   distance(v?: Vec3): number
